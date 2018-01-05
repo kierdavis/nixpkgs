@@ -12,8 +12,6 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ rpmextract ];
 
-  sourceRoot = ".";
-
   libPath = stdenv.lib.makeLibraryPath [
     stdenv.cc.cc.lib
     ncurses5
@@ -23,8 +21,9 @@ stdenv.mkDerivation rec {
 
   postUnpack = ''
     # Extract the RPMs contained within the source ZIP.
-    rpmextract source/intel-opencl-r${version}.x86_64.rpm
-    rpmextract source/intel-opencl-cpu-r${version}.x86_64.rpm
+    rpmextract $sourceRoot/intel-opencl-r${version}.x86_64.rpm
+    rpmextract $sourceRoot/intel-opencl-cpu-r${version}.x86_64.rpm
+    export sourceRoot=$PWD
   '';
 
   patchPhase = ''
