@@ -18,8 +18,8 @@ buildPythonApplication rec {
   dontUseSetuptoolsCheck = true; #pycotap
 
   propagatedBuildInputs = with python3Packages; [
-    attrs configobj six random2 pysol_cards pycotap
-    # tkinter optional :
+    attrs configobj six tkinter random2 pysol_cards pycotap
+    # optional :
     pygame freecell-solver pillow
   ];
 
