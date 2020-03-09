@@ -25,7 +25,7 @@ buildPythonApplication rec {
 
   nativeBuildInputs = [ desktop-file-utils ];
   postPatch = ''
-    desktop-file-edit --set-key Exec --set-value pysol data/pysol.desktop
+    desktop-file-edit --set-key Exec --set-value $out/bin/pysol.py data/pysol.desktop
   '';
   
   postInstall = ''
