@@ -1,10 +1,9 @@
 { fetchFromGitHub, lib, python3Packages, gnupg, perl }:
 
-let version = "3.0.0"; in
-python3Packages.buildPythonApplication {
+python3Packages.buildPythonApplication rec {
   pname = "pius";
   namePrefix = "";
-  inherit version;
+  version = "3.0.0";
 
   src = fetchFromGitHub {
     owner = "jaymzh";
