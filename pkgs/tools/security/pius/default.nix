@@ -13,9 +13,7 @@ python3Packages.buildPythonApplication rec {
   };
 
   patchPhase = ''
-    for file in libpius/constants.py pius-keyring-mgr; do
-      sed -i "$file" -E -e's|/usr/bin/gpg2?|${gnupg}/bin/gpg|g'
-    done
+    sed -i -E 's|/usr/bin/gpg2?|${gnupg}/bin/gpg|g' libpius/constants.py pius-keyring-mgr
   '';
 
   buildInputs = [ perl ];
