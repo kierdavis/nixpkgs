@@ -9,7 +9,7 @@ python3Packages.buildPythonApplication rec {
     owner = "jaymzh";
     repo = "pius";
     rev = "v${version}";
-    sha256 = "0l87dx7n6iwy8alxnhvval8h1kl4da6a59hsilbi65c6bpj4dh3y";
+    hash = "sha256-fsBG5F2GFRMXjRqmooxqhM4AEVV7Q9upQp5HY09vB1E=";
   };
 
   patchPhase = ''
